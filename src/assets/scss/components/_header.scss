@@ -30,4 +30,64 @@
             font-size: 18px;
         }
     }
+    &-bottom{
+        button{
+            width: 120px;
+            background-color: rgb(149, 68, 225);
+            color: white;
+            height: 45px;
+            border-radius: 4px;
+            font-size: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            column-gap: 5px;
+            &:hover{
+                background-color: rgb(192, 147, 233);
+                transition: all 0.2s ease-in-out;
+            }
+        }
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        .input{
+            display: flex;
+            align-items: center;
+            width: 620px;
+            border: 1px solid gray;
+            height: 45px;
+            justify-content: space-between;
+            border-radius: 4px;
+            input{
+                border: none;
+                width: 70%;
+                font-size: 16px;
+                outline: none;
+                padding: 0 0 0 10px;
+            }
+            button{
+                height: 100%;
+                width: 70px;
+                background-color: rgb(222, 222, 222);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border: none;
+                border-radius: 0 4px 4px 0;
+            }
+        }
+        .pages{
+            width: 280px;
+            height: auto;
+            padding: 10px 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            span{
+                display: flex;
+                align-items: center;
+                column-gap: 5px;
+            }
+        }
+    }
 }

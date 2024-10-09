@@ -5,6 +5,8 @@ import LocationIcon from '../../public/icons/LocationIcon'
 import Search from '../../public/icons/Search';
 import SignIn from '../../public/icons/SignIn';
 import Heart from '../../public/icons/Heart';
+import Korzina from '../../public/icons/korzina';
+import Catalog from '../../public/icons/Catalog';
 
 
 function Header() {
@@ -20,8 +22,8 @@ function Header() {
                        </div>
                        <div className='right'>
                         <Link className='buy'>Uzumda Soting</Link>
-                        <Link>Savol-Javoblar</Link>
-                        <Link>Buyurtmalarim</Link>
+                        <Link to='/faq'>Savol-Javoblar</Link>
+                        <Link >Buyurtmalarim</Link>
                         <span>
 
                         <img src="/images/uzb-flag.png" width={24} height={24} alt="flag" />
@@ -32,15 +34,28 @@ function Header() {
                     <div className="header-bottom">
                         <Logo/>
                         
-                            <button>Katalog </button>                            
+                            <button> <Catalog/> Katalog </button>                            
                             <div className="input">
                                 <input type="text" placeholder='Mahsulotlar va turkumlar izlash' />
                                 <button> <Search/></button>
                             </div>
-                            <SignIn/>
-                            <Heart/>
+                            <div className="pages">
+                               <span>
+                               <SignIn/>
+                                <Link to='/sign'>  Kirish</Link>
+                                </span> 
+                                <span>
+                                <Heart/> 
+                                <Link to='/saralangan'> Saralangan</Link>
+                                </span>
+                                <span>
+                                <Korzina/>
+                                <Link to='/korzina'> Savat</Link>
+                                </span>
+                            </div>
                     </div>
                 </div>
+                
             </div>
         </header>
     )
