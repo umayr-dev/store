@@ -32,7 +32,7 @@ function Header() {
                        </div>
                     </div>
                     <div className="header-bottom">
-                        <Logo/>
+                        <Link to='/'><Logo/></Link>
                         
                             <button> <Catalog/> Katalog </button>                            
                             <div className="input">

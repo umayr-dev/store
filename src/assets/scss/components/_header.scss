@@ -54,7 +54,7 @@
             display: flex;
             align-items: center;
             width: 620px;
-            border: 1px solid gray;
+            border: 0.5px solid rgb(176, 175, 175);
             height: 45px;
             justify-content: space-between;
             border-radius: 4px;
@@ -77,16 +77,27 @@
             }
         }
         .pages{
-            width: 280px;
-            height: auto;
+            width: auto;
+            height: 45px;
             padding: 10px 0;
             display: flex;
             align-items: center;
             justify-content: space-between;
+            column-gap: 10px;
             span{
                 display: flex;
                 align-items: center;
                 column-gap: 5px;
+                width: auto;
+                height: 45px;
+                padding: 15px;
+                justify-content: center;
+                border: none;
+                border-radius: 4px;
+                &:hover{
+                    background-color: rgb(211, 208, 208);
+                    transition: all 0.3s ease-in-out;
+                }
             }
         }
     }
