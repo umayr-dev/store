@@ -5,7 +5,7 @@ import LocationIcon from '../../public/icons/LocationIcon'
 import Search from '../../public/icons/Search';
 import SignIn from '../../public/icons/SignIn';
 import Heart from '../../public/icons/Heart';
-import Korzina from '../../public/icons/korzina';
+import Korzina from '../../public/icons/Korzina';
 import Catalog from '../../public/icons/Catalog';
 
 
