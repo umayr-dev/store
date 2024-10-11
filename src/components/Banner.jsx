@@ -6,12 +6,13 @@ import 'swiper/css/pagination';
 import { Navigation, Pagination } from 'swiper/modules';
 
 function Banner({list}) {
-
+  
   return (
     <main>
         <div className="container">
             
                 <Swiper navigation={true} modules={[Navigation, Pagination]} pagination={true} className="mySwiper">
+                  
                   {
                     list.map((item)=>(
                       <SwiperSlide key={item.id}>
