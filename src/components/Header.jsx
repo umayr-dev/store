@@ -46,13 +46,25 @@ function Header() {
                                 </span> 
                                 <span>
                                 <Heart/> 
-                                <Link to='/saralangan'> Saralangan</Link>
+                                <Link to='/wishes'> Saralangan</Link>
                                 </span>
                                 <span>
                                 <Korzina/>
-                                <Link to='/korzina'> Savat</Link>
+                                <Link to='/cart'> Savat</Link>
                                 </span>
                             </div>
+                    </div>
+                    <div className="header-categories">
+                        <p><img src="/images/artel.png" height={24} width={24} alt="" /><span>Artel Savdosi</span></p>
+                        <p><img src="/images/chilla_bozori.png" height={24} width={24} alt="" /><span>Katta Savdo</span></p>
+                        <p><img src="/images/uhod.png" height={24} width={24} alt="" /><span>Go'zallik va parvarish</span></p>
+                        <p><img src="/images/updauto.png" height={24} width={24} alt="" /><span>Hammasi avto uchun</span></p>
+                        <p><img src="/images/Adidas.png" height={24} width={24} alt="" /><span>Adidas Sale</span></p>
+                        <Link className='link'>Elektronika</Link>
+                        <Link className='link'>Maishiy Texnika</Link>
+                        <Link className='link'>Kiyim</Link>
+                        <Link className='link'>Poyabzallar</Link>
+                        <Link className='link'>Yana <img src="/images/chevron-down-regular-24.png" width={14} height={14} alt="" /></Link>
                     </div>
                 </div>
                 
