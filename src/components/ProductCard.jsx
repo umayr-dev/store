@@ -12,7 +12,7 @@ function ProductCard(props) {
             </div>
             <div className="card-content">
                 <p>{props.product.title}</p>
-                <span><Star/> <p>{props.product.comment}</p></span>
+                <p> <span><Star/>  {props.product.comment}</span></p>
                 <p className='price'>{props.product.price}</p>
                 <del>{props.product.subtotal}</del>
                 <h2>{props.product.total} so'm</h2>
