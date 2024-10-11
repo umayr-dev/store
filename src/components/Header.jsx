@@ -34,7 +34,7 @@ function Header() {
                     <div className="header-bottom">
                         <Link to='/'><Logo/></Link>
                         
-                            <button> <Catalog/> Katalog </button>                            
+                            <button> <img src="/images/catalog.png" alt="" /> Katalog </button>                            
                             <div className="input">
                                 <input type="text" placeholder='Mahsulotlar va turkumlar izlash' />
                                 <button> <Search/></button>

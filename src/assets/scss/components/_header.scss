@@ -42,6 +42,10 @@
             align-items: center;
             justify-content: center;
             column-gap: 5px;
+            img{
+                width: 24px;
+                height: 24px;
+            }
             &:hover{
                 background-color: rgb(192, 147, 233);
                 transition: all 0.2s ease-in-out;
