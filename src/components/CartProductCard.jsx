@@ -30,7 +30,7 @@ function CartProductCard() {
                                     <p>Sotuvchi: World of stationery</p>
                                     <div className="buttons">
                                         <button>-</button>
-                                        <button>1</button>
+                                        <p>1</p>
                                         <button>+</button>
                                     </div>
                                     <span><h2>39 500 so'm</h2> <del>57 000 so'm</del></span>
