@@ -90,3 +90,9 @@ export let productList = [
         img: '/images/fairy.jpg'
     }
 ]
+
+export let cartList = [
+    {
+        id: 1,
+    }
+]

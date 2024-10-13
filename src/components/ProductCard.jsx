@@ -17,7 +17,9 @@ function ProductCard(props) {
                 <del>{props.product.subtotal}</del>
                 <h2>{props.product.total} so'm</h2>
             </div>
+            
         </div>
+        
     </div>
         )
 
