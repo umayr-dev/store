@@ -11,7 +11,7 @@ function Main() {
             <Routes>
                 <Route path='/' element={<Home />} />
                 <Route path='/categories' element={<Categories />} />
-                <Route path='/product' element={<Product />} />
+                <Route path='/product/:slug' element={<Product />} />
                 <Route path='/cart' element={<CartProductCard />} />
             </Routes>
         </main>

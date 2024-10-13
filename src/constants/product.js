@@ -6,7 +6,8 @@ export let productList = [
         price: "4 608 so'm /oyiga",
         subtotal: '57 000',
         total: '39 500',
-        img: '/images/qogoz.jpg'
+        img: '/images/qogoz.jpg',
+        slug: 'office-qogoz'
     },
     {
         id: 2,
@@ -15,7 +16,8 @@ export let productList = [
         price: "2 450 so'm /oyiga",
         subtotal: '29 000',
         total: '21 000',
-        img: '/images/shampoo.jpg'
+        img: '/images/shampoo.jpg',
+        slug: 'nivea-gel'
     },
     {
         id: 3,
@@ -24,7 +26,8 @@ export let productList = [
         price: "2 098 so'm /oyiga",
         subtotal: '25 000',
         total: '17 000',
-        img: '/images/fairy.jpg'
+        img: '/images/fairy.jpg',
+        slug: 'fairy-gel'
     },
     {
         id: 4,
@@ -33,7 +36,8 @@ export let productList = [
         price: "3 382 so'm /oyiga",
         subtotal: '48 000',
         total: '28 990',
-        img: '/images/palmoliveShampoo.jpg'
+        img: '/images/palmoliveShampoo.jpg',
+        slug: 'palmolive-gel'
     },
     {
         id: 5,
@@ -42,7 +46,8 @@ export let productList = [
         price: "268 216 so'm /oyiga",
         subtotal: '3 000 000',
         total: '2 229 000',
-        img: '/images/pelesos.jpg'
+        img: '/images/pelesos.jpg',
+        slug: 'pelesos'
     },
     {
         id: 6,
@@ -51,7 +56,8 @@ export let productList = [
         price: "3 068 so'm /oyiga",
         subtotal: '32 000',
         total: '36 360',
-        img: '/images/toiletpaper.jpg'
+        img: '/images/toiletpaper.jpg',
+        slug: 'toilet-paper'
     },
     {
         id: 7,
@@ -60,7 +66,8 @@ export let productList = [
         price: "2 098 so'm /oyiga",
         subtotal: '25 000',
         total: '17 000',
-        img: '/images/fairy.jpg'
+        img: '/images/fairy.jpg',
+        slug: 'fairy-gel'
     },
     {
         id: 8,
@@ -69,7 +76,8 @@ export let productList = [
         price: "3 382 so'm /oyiga",
         subtotal: '48 000',
         total: '28 990',
-        img: '/images/shamoo2.jpg'
+        img: '/images/shamoo2.jpg',
+        slug: 'palmolive-gel'
     },
     {
         id: 9,
@@ -78,7 +86,8 @@ export let productList = [
         price: "2 450 so'm /oyiga",
         subtotal: '29 000',
         total: '21 000',
-        img: '/images/shampoo.jpg'
+        img: '/images/shampoo.jpg',
+        slug: 'nivea-gel'
     },
     {
         id: 10,
@@ -87,12 +96,7 @@ export let productList = [
         price: "2 098 so'm /oyiga",
         subtotal: '25 000',
         total: '17 000',
-        img: '/images/fairy.jpg'
-    }
-]
-
-export let cartList = [
-    {
-        id: 1,
+        img: '/images/fairy.jpg',
+        slug: 'fairy-gel'
     }
 ]
