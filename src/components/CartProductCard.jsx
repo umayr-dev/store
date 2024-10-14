@@ -24,7 +24,7 @@ function CartProductCard() {
                                 <div className="context-top">
                                     <p>
                                     Ofis texnikalari uchun qog'oz varaqlari Sylvamo Svetotopy, A4f C07/3, 500 varaq</p>
-                                    <span> <TrashBox/> <p>Yo'q qilish</p></span>
+                                    <button> <TrashBox/> <p>Yo'q qilish</p></button>
                                 </div>
                                 <div className="context-bottom">
                                     <p>Sotuvchi: World of stationery</p>
