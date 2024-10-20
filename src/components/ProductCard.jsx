@@ -14,8 +14,8 @@ function ProductCard({ product }) {
             </div>
             <div className="card-content">
                 <p>{name}</p>
-                <p> <span><Star/>  {reviews}</span></p>
-                <p className='price'>{price_per_month}</p>
+                <p> <span><Star/> ( {reviews} sharhlar)</span></p>
+                <p className='price'>{price_per_month} so'm/oyiga</p>
                 <del>{price}</del>
                 <h2>{discount_price} so'm</h2>
             </div>

@@ -23,9 +23,14 @@ function Product() {
 
   return (
     <>
-      <div className="product">
+    <main>
+    <div className="container">
+    <div className="product">
         <h1>{product?.name}</h1>
       </div>
+    </div>
+    </main>
+
     </>
   )
 }
