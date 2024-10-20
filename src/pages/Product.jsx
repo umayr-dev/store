@@ -1,14 +1,30 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
+
 
 function Product() {
   const {slug} = useParams()
-  console.log(slug);
+  const [ product, setProduct] = useState()
+
+  function getProduct(){
+    fetch(`https://5709cdd829da4f5e.mokky.dev/products/${slug}`).then(function(res){
+      return res.json()
+    }).then(function(data){
+      setProduct(data)
+    }).catch(function(err){
+      console.log(err, 'olov');
+      
+    })
+  }
   
+  useEffect(()=> {
+    getProduct()
+  }, [slug]);
+
   return (
     <>
       <div className="product">
-        <h1>Product</h1>
+        <h1>{product?.name}</h1>
       </div>
     </>
   )

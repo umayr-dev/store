@@ -2,21 +2,22 @@ import React from 'react'
 import Star from '../../public/icons/Star'
 import { Link } from 'react-router-dom'
 
-function ProductCard(props) {
+function ProductCard({ product }) {
+    const {id,name, images, price, price_per_month, reviews, discount_price } = product
   return (
     <div className="container">
 
-        <Link to={props.product.slug}>
+        <Link to={'/product/' + id}>
         <div className="card">
             <div className="card-image">
-                <img src={props.product.img} alt="" />
+                <img src={images[0]} alt={name} />
             </div>
             <div className="card-content">
-                <p>{props.product.title}</p>
-                <p> <span><Star/>  {props.product.comment}</span></p>
-                <p className='price'>{props.product.price}</p>
-                <del>{props.product.subtotal}</del>
-                <h2>{props.product.total} so'm</h2>
+                <p>{name}</p>
+                <p> <span><Star/>  {reviews}</span></p>
+                <p className='price'>{price_per_month}</p>
+                <del>{price}</del>
+                <h2>{discount_price} so'm</h2>
             </div>
         </div>
         </Link>
