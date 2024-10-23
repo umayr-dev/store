@@ -3,6 +3,7 @@
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
+    position: relative;
     &-image{
         z-index: 10;
         width: 100%;
@@ -59,5 +60,45 @@
         box-shadow: 4px 5px 8px -1px rgba(209,201,209,0.87);
         
     transition: all 0.3s ease-out;
+    }
+    &-buttons{
+        width: fit-content;
+        height: 100%;
+        padding: 10px;
+        position: absolute;
+        top: 0;
+        right: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        button:first-child{
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            border: 1px solid rgb(206, 206, 206);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: white;
+            transition: all 0.2s ease-in-out;
+            &:hover{
+                background-color: rgb(184, 179, 179);
+            }
+        }
+        .cart-saved{
+            z-index: 100;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            border: 1px solid rgb(206, 206, 206);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: white;
+            transition: all 0.2s ease-in-out;
+            &:hover{
+                background-color: rgb(184, 179, 179);
+            }
+        }
     }
 }

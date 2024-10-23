@@ -6,7 +6,6 @@ import Search from '../../public/icons/Search';
 import SignIn from '../../public/icons/SignIn';
 import Heart from '../../public/icons/Heart';
 import Korzina from '../../public/icons/Korzina';
-import Catalog from '../../public/icons/Catalog';
 
 
 function Header() {
@@ -43,7 +42,7 @@ function Header() {
                         <Link >Buyurtmalarim</Link>
                         <span>
 
-                        <img src="/images/uzb-flag.png" width={24} height={24} alt="flag" />
+                        <img src="/images/uz-flag.png" width={24} height={24} alt="flag" />
                         O'zbekcha
                         </span>
                        </div>
@@ -51,7 +50,7 @@ function Header() {
                     <div className="header-bottom">
                         <Link to='/'><Logo/></Link>
                         
-                            <button> <img src="/images/catalog.png" alt="" /> Katalog </button>                            
+                            <button> <img src="/images/pajamas--catalog-checkmark.png" width={24} height={24} alt="" /> Katalog </button>                            
                             <div className="input">
                                 <input type="text" placeholder='Mahsulotlar va turkumlar izlash' />
                                 <button> <Search/></button>
@@ -65,10 +64,12 @@ function Header() {
                                 <Heart/> 
                                 <Link to='/wishes'> Saralangan</Link>
                                 </span>
+                                <Link to='/cart'>
                                 <span>
                                 <Korzina/>
-                                <Link to='/cart'> Savat</Link>
+                                 Savat
                                 </span>
+                                </Link>
                             </div>
                     </div>
                     <div className="header-categories">
@@ -77,11 +78,11 @@ function Header() {
                             categories.map(item=> item.image ?.length >0 ? (
                                 <p>
                                     <img src={item.image} height={24} width={24} alt={item.name} />
-                                    <span>{item.name}</span>
+                                   <Link to="/categories"><span>{item.name}</span></Link> 
                                 </p>
 
                             ) : (
-                                <Link className='link'>{item.name}</Link>
+                                <Link className='link' to='/categories'>{item.name}</Link>
                             )
                         )
                         }

@@ -13,6 +13,7 @@ function Main() {
                 <Route path='/categories' element={<Categories />} />
                 <Route path='/product/:slug' element={<Product />} />
                 <Route path='/cart' element={<CartProductCard />} />
+                <Route path='/categories' element={<Categories />} />
             </Routes>
         </main>
     )

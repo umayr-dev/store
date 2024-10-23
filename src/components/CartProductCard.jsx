@@ -1,45 +1,48 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import TrashBox from '../../public/icons/TrashBox'
-import ProductList from './ProductList'
-import { productList } from '../constants/product'
+import { CartContext } from '../context/CartContext'
+import Counter from './Counter'
+import NullCart from './NullCart'
 
 function CartProductCard() {
+    const { cart, deleteItem, getTotal } = useContext(CartContext)
   return (
     <>
     <div className="container">
         <div className="cart">
-            <h1>Savatingiz, <span>1 mahsulot</span></h1>
+            <h1>{ getTotal() > 0 ? `Savatingiz ${getTotal()}mahsulot` : <NullCart/>}</h1>
             <div className="cart-content">
                 <div className="order-info">
-                    <div className="top">
+                    {/* <div className="top">
                         <p>Yetkazib berishning eng yaqin sanasi</p>
                         <span>15-oktabr</span>
-                    </div>
-                    <div className="bottom">
-                        <p>Uzum Market omborida </p>
-                        <h1>15-oktabr orasida yetkazamiz</h1>
-                        <div className="bottom-content">
-                            <img src="/images/qogoz.jpg" height={120} width={120} alt="" />
-                            <div className="context">
-                                <div className="context-top">
-                                    <p>
-                                    Ofis texnikalari uchun qog'oz varaqlari Sylvamo Svetotopy, A4f C07/3, 500 varaq</p>
-                                    <button> <TrashBox/> <p>Yo'q qilish</p></button>
-                                </div>
-                                <div className="context-bottom">
-                                    <p>Sotuvchi: World of stationery</p>
-                                    <div className="buttons">
-                                        <button>-</button>
-                                        <p>1</p>
-                                        <button>+</button>
+                    </div> */}
+                    {
+                        cart.map((item, key) =>(
+                            <div className="bottom" key={key}>
+                            <p>Uzum Market omborida </p>
+                            <h1>15-oktabr orasida yetkazamiz</h1>
+                            <div className="bottom-content">
+                                <img src={item.images[0]} height={120} width={120} alt="" />
+                                <div className="context">
+                                    <div className="context-top">
+                                        <p>
+                                        {item.name}</p>
+                                        <button onClick={()=> deleteItem(item.id)}> <TrashBox/> <p>Yo'q qilish</p></button>
                                     </div>
-                                    <span><h2>39 500 so'm</h2> <del>57 000 so'm</del></span>
+                                    <div className="context-bottom">
+                                        <p>Sotuvchi: World of stationery</p>
+                                        <Counter item={item}/>
+                                        <span><h2>{item.discount_price.toLocaleString()}</h2> <del>{item.price.toLocaleString()}</del></span>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    </div>
+                        </div> 
+                        ))
+                    }
+
                 </div>
-                <div className="ordered">
+                {/* <div className="ordered">
                     <h1>Buyurtmangiz</h1>
                     <span>
                         <p>Mahsulotlar (1):</p>
@@ -57,11 +60,10 @@ function CartProductCard() {
                     <button>
                         Rasmiylashtirishga o'tish
                     </button>
-                </div>
+                </div> */}
             </div>
         </div>
     </div>
-    <ProductList list={productList}/>
     
     </>
   )
