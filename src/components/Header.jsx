@@ -60,10 +60,12 @@ function Header() {
                                <SignIn/>
                                 <Link to='/sign'>  Kirish</Link>
                                 </span> 
+                                <Link to='/saved'>
                                 <span>
                                 <Heart/> 
-                                <Link to='/wishes'> Saralangan</Link>
+                                 Saralangan
                                 </span>
+                                </Link>
                                 <Link to='/cart'>
                                 <span>
                                 <Korzina/>
