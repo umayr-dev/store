@@ -5,6 +5,7 @@ import Categories from '../pages/Categories'
 import Product from '../pages/Product'
 import CartProductCard from './CartProductCard'
 import SavedProduct from '../pages/SavedProduct'
+import Checkout from '../pages/Checkout'
 
 function Main() {
     return (
@@ -16,6 +17,7 @@ function Main() {
                 <Route path='/cart' element={<CartProductCard />} />
                 <Route path='/categories' element={<Categories />} />
                 <Route path='/saved' element={<SavedProduct />} />
+                <Route path='/checkout' element={<Checkout />} />
             </Routes>
         </main>
     )

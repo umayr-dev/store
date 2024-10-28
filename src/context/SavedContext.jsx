@@ -4,7 +4,6 @@ export const SavedContext = createContext();
 
 function SavedProvider({ children }) {
   const [ saved, setSaved] = useState([]);
-  console.log(saved);
 
   function addSaved(product) {
     if(saved.some(item => item.id === product.id)){

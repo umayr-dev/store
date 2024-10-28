@@ -162,7 +162,7 @@
             border: 1px solid blue;
             border-radius: 4px;
         }
-        button{
+        .checkout{
             width: 100%;
             height: 50px;
             border: none;
@@ -173,6 +173,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
+            padding: 0 10px;
         }
         .price-order{
             display: flex;
