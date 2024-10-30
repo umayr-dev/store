@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import Banner from '../components/Banner'
 import ProductList from '../components/ProductList'
-import { productList } from '../constants/product'
 import Api from '../api';
 import { urls } from '../constants/urls';
 

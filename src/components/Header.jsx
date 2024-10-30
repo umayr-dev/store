@@ -9,7 +9,15 @@ import Korzina from '../../public/icons/Korzina';
 
 
 function Header() {
-
+//     const location = useLocation()
+//   const [headerClassname, setHeaderClassName] = useState('')
+//   useEffect(() => {
+//     if(location.pathname === '/sign'){
+//       setHeaderClassName('header-white')
+//     }else{
+//       setHeaderClassName('')
+//     }
+//   }, [location])
     const [categories, setCategories] = useState([])
 
     function getCategories(){
@@ -56,11 +64,13 @@ function Header() {
                                 <button> <Search/></button>
                             </div>
                             <div className="pages">
+                                <Link to='/sign'>
                                <span>
                                <SignIn/>
-                                <Link to='/sign'>  Kirish</Link>
+                                  Kirish
                                 </span> 
-                                <Link to='/saved'>
+                                  </Link>
+                                <Link  to='/saved'>
                                 <span>
                                 <Heart/> 
                                  Saralangan

@@ -6,6 +6,7 @@ import Product from '../pages/Product'
 import CartProductCard from './CartProductCard'
 import SavedProduct from '../pages/SavedProduct'
 import Checkout from '../pages/Checkout'
+import SignUp from '../pages/SignUp'
 
 function Main() {
     return (
@@ -18,6 +19,7 @@ function Main() {
                 <Route path='/categories' element={<Categories />} />
                 <Route path='/saved' element={<SavedProduct />} />
                 <Route path='/checkout' element={<Checkout />} />
+                <Route path='/sign' element={<SignUp />} />
             </Routes>
         </main>
     )

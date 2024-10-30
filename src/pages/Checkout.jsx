@@ -42,7 +42,12 @@ function Checkout() {
                 <span>28-oktabr (Ertaga), <p className='green'>bepul</p></span>
                 <p>Buyurtmani saqlash muddati – 5 kun</p>
                 <button className='change'>O'zgartirish</button>
-                
+                <div className="checkout-info">
+                    <h2>Buyurtmani qabul qiluvchi:</h2>
+                    <form className="form">
+                        
+                    </form>
+                </div>
             </div>
             <div className="checkout-ordered" >
                                     <h1>Buyurtmangiz <Link to='/cart'><p style={{textDecoration: 'underline'}} >Savatga o'tish</p></Link></h1>

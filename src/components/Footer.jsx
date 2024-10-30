@@ -7,6 +7,7 @@ import Facebook from '../../public/icons/Facebook'
 import Yt from '../../public/icons/Yt'
 
 function Footer() {
+    
     return (
         <footer>
             <div className="container">
