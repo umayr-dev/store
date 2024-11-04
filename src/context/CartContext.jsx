@@ -3,26 +3,31 @@ import React, { createContext, useState } from 'react'
 export const CartContext = createContext();
 
 function CartProvider( {children} ) {
-    const [cart, setCart] = useState([])
+  let initialState = localStorage.getItem('cart') ? JSON.parse(localStorage.getItem('cart')) : []
+    const [cart, setCart] = useState(initialState)
 
+    function setLocaleCart(cart){
+      localStorage.setItem('cart', JSON.stringify(cart))
+      setCart(cart)
+    }
     function addCart(product){
       if(cart.some(item => item.id === product.id)){
-        setCart(cart.map(item=> item.id === product.id ? {...item, qty: item.qty + 1}:item))
+        setLocaleCart(cart.map(item=> item.id === product.id ? {...item, qty: item.qty + 1}:item))
       }else{
 
         let obj = {...product, qty:1}
-        setCart([...cart, obj])
+        setLocaleCart([...cart, obj])
 
       }
     }
     function deleteItem(id){
-      setCart(cart.filter(item => item.id !== id))
+      setLocaleCart(cart.filter(item => item.id !== id))
     }
     function increment(id){
-      setCart(cart.map(item => item.id === id ? {...item,qty: item.qty + 1 }: item))
+      setLocaleCart(cart.map(item => item.id === id ? {...item,qty: item.qty + 1 }: item))
     }
     function decrement(id){
-      setCart(cart.map(item => item.id === id ? {...item,qty: item.qty === 1 ? 1 : - 1 }: item))
+      setLocaleCart(cart.map(item => item.id === id ? {...item,qty: item.qty === 1 ? 1 : - 1 }: item))
     }
     function getTotal(){
       let total = 0
@@ -31,7 +36,22 @@ function CartProvider( {children} ) {
       }
       return total
     }
-  return <CartContext.Provider value={{ cart, addCart, increment, decrement, deleteItem , getTotal}}>
+
+    function getTotalSum(){
+      let sum = 0
+      for(let item of cart){
+        sum +=item.discount_price * item.qty
+      }
+      return sum
+    }
+    function getTotalPrice(){
+      let sum = 0
+      for(let item of cart){
+        sum +=item.price * item.qty
+      }
+      return sum
+    }
+  return <CartContext.Provider value={{ cart, addCart, increment, decrement, deleteItem , getTotal,getTotalSum, getTotalPrice}}>
     {children}
   </CartContext.Provider>
     

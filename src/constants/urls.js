@@ -16,5 +16,14 @@ export const  urls ={
         post: '/products',
         patch: (id)=> `/products/${id}`,
         delete: (id)=> `/products/${id}`
+    },
+    brands : {
+        get: '/brand',
+        post: '/brand',
+        patch: (id)=> `/brand/${id}`,
+        delete: (id)=> `/brand/${id}`
+    },
+    auth : {
+        register: '/register'
     }
 }

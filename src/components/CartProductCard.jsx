@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom'
 
 
 function CartProductCard() {
-    const { cart, deleteItem, getTotal } = useContext(CartContext)
+    const { cart, deleteItem, getTotal, getTotalSum, getTotalPrice } = useContext(CartContext)
   return (
     <>
     <div className="container">
@@ -34,9 +34,12 @@ function CartProductCard() {
                                         <button onClick={()=> deleteItem(item.id)}> <TrashBox/> <p>Yo'q qilish</p></button>
                                     </div>
                                     <div className="context-bottom">
-                                        <p>Sotuvchi: World of stationery</p>
+                                        <p></p>
                                         <Counter item={item}/>
-                                        <span><h2>{item.discount_price.toLocaleString()}</h2> <del>{item.price.toLocaleString()}</del></span>
+                                        <div>
+                                            <h2>{(item.discount_price * item.qty).toLocaleString()}</h2>
+                                             <del>{(item.price * item.qty).toLocaleString()}</del>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -50,15 +53,15 @@ function CartProductCard() {
                                     <h1>Buyurtmangiz</h1>
                                     <span>
                                         <p>Mahsulotlar {getTotal()}:</p>
-                                        <p></p>
+                                        <p>Asl Bahosi: {getTotalPrice().toLocaleString()} So'm</p>
                                     </span>
                                     <div className="arrive-date">
-                                        <p>Yetkazib berish 15-oktabr</p>
+                                        <p>Yetkazib berish ertaga</p>
                                     </div>
                                     <span>
                                         <p>Jami:</p>
-                                        <p className='price-order'>39 500 so'm
-                                            <span>Tejavingiz: 17 500 so'm</span>
+                                        <p className='price-order'>{getTotalSum().toLocaleString()} so'm
+                                            <span>Tejavingiz: {(getTotalPrice() - getTotalSum()).toLocaleString()} so'm</span>
                                         </p>
                                     </span>
                                     <Link to="/checkout">

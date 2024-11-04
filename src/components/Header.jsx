@@ -1,14 +1,15 @@
-import React, { useEffect, useState } from 'react'
-import { Link } from "react-router-dom";
+import React, { useContext, useEffect, useState } from 'react'
+import { Link, useNavigate } from "react-router-dom";
 import Logo from '../../public/icons/logo'
 import LocationIcon from '../../public/icons/LocationIcon'
 import Search from '../../public/icons/Search';
 import SignIn from '../../public/icons/SignIn';
 import Heart from '../../public/icons/Heart';
 import Korzina from '../../public/icons/Korzina';
+import { CartContext } from '../context/CartContext';
 
 
-function Header() {
+function Header({onAuthModalOpen}) {
 //     const location = useLocation()
 //   const [headerClassname, setHeaderClassName] = useState('')
 //   useEffect(() => {
@@ -18,7 +19,10 @@ function Header() {
 //       setHeaderClassName('')
 //     }
 //   }, [location])
+    const {getTotal} = useContext(CartContext)
     const [categories, setCategories] = useState([])
+    const isAuth = JSON.parse(localStorage.getItem('user')) || false
+    const navigate = useNavigate()
 
     function getCategories(){
         fetch('https://5709cdd829da4f5e.mokky.dev/categories').then(function(response){
@@ -64,24 +68,29 @@ function Header() {
                                 <button> <Search/></button>
                             </div>
                             <div className="pages">
-                                <Link to='/sign'>
-                               <span>
+
+
+                               <span style={{cursor: 'pointer'}} onClick={isAuth ? ()=> navigate('/profile') : onAuthModalOpen}>
                                <SignIn/>
-                                  Kirish
+                                 {isAuth ? isAuth.name : "Kirish"} 
                                 </span> 
-                                  </Link>
+
+
                                 <Link  to='/saved'>
                                 <span>
                                 <Heart/> 
                                  Saralangan
                                 </span>
                                 </Link>
+
                                 <Link to='/cart'>
-                                <span>
+                                <span className='cart-text'>
                                 <Korzina/>
                                  Savat
+                                    <sup className={getTotal() <1 ? 'cart-index-active' : 'cart-index'}>{getTotal() <1 ? null : getTotal()}</sup>
                                 </span>
                                 </Link>
+
                             </div>
                     </div>
                     <div className="header-categories">

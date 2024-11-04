@@ -40,9 +40,9 @@ function Home() {
     <>
 
       <Banner list={banners.filter(item=> item.position === 'hero')}/>
-      <ProductList list={products}/>
+      <ProductList isHome={true}  list={products}/>
       <Banner list={banners.filter(item=> item.position === 'bottom')}/>
-    <ProductList list={products}/>
+    <ProductList isHome={true} list={products}/>
     </>
   )
 }

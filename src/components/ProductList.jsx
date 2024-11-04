@@ -6,15 +6,15 @@ import Right from '../../public/icons/Right'
 function ProductList(props) {
   return (
     <div className="container">
-    <Link className='famous' to='/top'>Mashhur <Right/></Link>
-    <div className="productlist">
+    { props.isHome ? <Link className='famous' to='/top'>Mashhur <Right/></Link> : null}
+    <div className={props.isGrid ? "productlist productlist-grid" : "productlist"}>
     {props.list.map((item) => (
         <ProductCard key={item.id} product={item} />
     ))}
   </div>
-  <div className="other">
+  {props.isHome ? <div className="other">
     <button>Yana ko'rsatish 10</button>
-  </div>
+  </div> : null}
     </div>
   )
   

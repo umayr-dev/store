@@ -18,7 +18,6 @@ function Product() {
       setProduct(data)
     }).catch(function(err){
       console.log(err, 'olov');
-      
     })
   }
   
