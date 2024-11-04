@@ -62,7 +62,9 @@ function Header({onAuthModalOpen}) {
                     <div className="header-bottom">
                         <Link to='/'><Logo/></Link>
                         
+                           <Link to="/categories">
                             <button> <img src="/images/pajamas--catalog-checkmark.png" width={24} height={24} alt="" /> Katalog </button>                            
+                           </Link>
                             <div className="input">
                                 <input type="text" placeholder='Mahsulotlar va turkumlar izlash' />
                                 <button> <Search/></button>
@@ -97,7 +99,7 @@ function Header({onAuthModalOpen}) {
 
                         {
                             categories.map(item=> item.image ?.length >0 ? (
-                                <p>
+                                <p key={item.id}>
                                     <img src={item.image} height={24} width={24} alt={item.name} />
                                    <Link to="/categories"><span>{item.name}</span></Link> 
                                 </p>
