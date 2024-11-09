@@ -43,8 +43,9 @@ function Footer() {
                     <div className="footer-bottom">
                         <h2>Maxfiylik kelishuvi 
                         <span>Foydalanuvchi kelishuvi</span></h2>
-                        <p>«2024© XK MCHJ «UZUM MARKET». STIR 309376127. Barcha huquqlar himoyalangan»</p>
+                        <p>2016-2024 © texnomart.uz. Barcha huquqlar himoyalangan. Tovarlarning ko'rsatilgan qiymati va ularni sotib olish shartlari joriy sanaga amal qiladi</p>
                     </div>
+                    
                 </div>
             </div>
         </footer>

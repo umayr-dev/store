@@ -3,6 +3,8 @@ import Banner from '../components/Banner'
 import ProductList from '../components/ProductList'
 import Api from '../api';
 import { urls } from '../constants/urls';
+import BannerCategories from '../components/BannerCategories';
+import BrandCategories from '../components/BrandCategories';
 
 function Home() {
   const [banners, setBanners]= useState([]);
@@ -40,8 +42,9 @@ function Home() {
     <>
 
       <Banner list={banners.filter(item=> item.position === 'hero')}/>
+      <BannerCategories/>
       <ProductList isHome={true}  list={products}/>
-      <Banner list={banners.filter(item=> item.position === 'bottom')}/>
+      <BrandCategories/>
     <ProductList isHome={true} list={products}/>
     </>
   )

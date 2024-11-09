@@ -1,5 +1,5 @@
 .card{
-    width: 245px;
+    width: 250px;
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
@@ -20,7 +20,7 @@
     &-content{
         width: 100%;
         height: auto;
-        padding: 10px ;
+        padding: 10px 5px ;
         row-gap: 2px;
         display: flex;
         flex-direction: column;
@@ -38,7 +38,7 @@
             border-radius: 4px;
             height: auto;
             padding: 5px 10px;
-            background-color: yellow;
+            background-color: #f4f4f4;
             font-size: 14px;
         }
         span{
@@ -62,13 +62,14 @@
     transition: all 0.3s ease-out;
     }
     &-buttons{
+        transition: all 0.3s ease;
         width: fit-content;
         height: 100%;
-        padding: 10px;
+        padding: 10px 5px;
         position: absolute;
         top: 0;
         right: 0;
-        display: flex;
+        display: none;
         flex-direction: column;
         justify-content: space-between;
         button:first-child{
@@ -87,10 +88,10 @@
         }
         .cart-saved{
             z-index: 100;
-            width: 40px;
+            width: 50px;
             height: 40px;
-            border-radius: 50%;
-            border: 1px solid rgb(206, 206, 206);
+            border-radius: 8px;
+            border: 2px solid #fbc100;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -101,4 +102,53 @@
             }
         }
     }
+    &:hover .card-buttons{
+        
+            display: flex;
+        
+    }
 }
+
+
+.product-search {
+    padding: 20px;
+    background-color: #f9f9f9;
+  }
+  
+  .search-box {
+    margin-bottom: 20px;
+  }
+  
+  .search-box input {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+  }
+  
+  .product-list {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .product-item {
+    width: 150px;
+    padding: 10px;
+    margin: 10px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    text-align: center;
+  }
+  
+  .product-item img {
+    max-width: 100%;
+    border-radius: 4px;
+  }
+  
+  .product-item p {
+    margin-top: 10px;
+    font-size: 14px;
+  }
+  

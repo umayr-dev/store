@@ -1,3 +1,7 @@
+footer{
+    background-color: #333;
+    color: white;
+    padding: 20px 0;
 .footer{
     display: flex;
     flex-direction: column;
@@ -14,7 +18,7 @@
             row-gap: 20px;
             padding: 20px 0;
             p{
-                color: gray;
+                color: white;
                 font-size: 13px;
             }
             h2{
@@ -59,10 +63,12 @@
         }
         p{
             font-size: 12px;
-            color: gray;
+            color: white;
         }
     }
 }
+}
+
 .footer-white{
     display: none;
 }

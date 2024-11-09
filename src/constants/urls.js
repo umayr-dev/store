@@ -25,5 +25,11 @@ export const  urls ={
     },
     auth : {
         register: '/register'
+    },
+    orders: {
+        get: '/orders',
+        post: '/orders',
+        patch: (id)=> `/orders/${id}`,
+        delete: (id)=> `/orders/${id}`
     }
 }

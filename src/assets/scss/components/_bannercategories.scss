@@ -1,0 +1,33 @@
+.banner-categories{
+    margin: 50px 0;
+    .slider-banner{
+        height: 120px;
+        background-color: aliceblue;
+        padding: 10px;
+        justify-content: space-around;
+        opacity: 0.7;
+
+        display: flex;
+        align-items: center;
+        border: none;
+        border-radius: 8px;
+
+    }
+}
+
+.brands-categories{
+    margin: 50px 0;
+    .slider-brands{
+        height: auto;
+        width: 80px;
+
+        padding: 10px;
+        justify-content: space-around;
+
+        display: flex;
+        align-items: center;
+        border: none;
+        border-radius: 8px;
+
+    }
+}

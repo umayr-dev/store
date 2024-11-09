@@ -61,7 +61,7 @@ function CartProductCard() {
                                     <span>
                                         <p>Jami:</p>
                                         <p className='price-order'>{getTotalSum().toLocaleString()} so'm
-                                            <span>Tejavingiz: {(getTotalPrice() - getTotalSum()).toLocaleString()} so'm</span>
+                                            <span>Tejavingiz: {(getTotalPrice()-getTotalSum()).toLocaleString()} so'm</span>
                                         </p>
                                     </span>
                                     <Link to="/checkout">

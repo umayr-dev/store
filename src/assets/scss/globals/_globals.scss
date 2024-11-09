@@ -10,7 +10,7 @@
 
 .container {
     width: 100%;
-    max-width: 1440px;
+    max-width: 1480px;
     margin: 0 auto;
     padding: 0 20px;
 }
@@ -49,3 +49,28 @@
 }
 
 
+#scrollToTopBtn {
+    z-index: 20;
+    padding: 5px 0;
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background-color: aliceblue;
+    color: #333;
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 30px;
+    // font-weight: 900;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    display: none; /* Initialy hidden */
+  }
+  
+  #scrollToTopBtn:hover {
+    background-color: #fbc100;
+  }
+  

@@ -34,9 +34,14 @@ function AuthModal({open, onClose}) {
                 <br />
                 <form onSubmit={handleSubmit} className="modal-form">
                     <label>
+                        <span>Familiyangizni kiriting:</span>
+                        <br />
+                        <input type="text" name='familiya' required />
+                    </label>
+                    <label>
                         <span>Ismingizni kiriting:</span>
                         <br />
-                        <input type="text" name='name' required />
+                        <input type="text" name='ism' required />
                     </label>
                     <label>
                         <span>Email  kiriting:</span>

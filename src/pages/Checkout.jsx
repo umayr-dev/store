@@ -1,14 +1,47 @@
 import React from 'react'
 import { useContext } from 'react'
 import { CartContext } from '../context/CartContext'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
+import Api from '../api'
+import { urls } from '../constants/urls'
+import { message, Form, Input, Checkbox } from 'antd'
 
 
 
 function Checkout() {
-    const {getTotal, getTotalSum, getTotalPrice } = useContext(CartContext)
-
-
+    const { cart,  getTotal, getTotalSum, getTotalPrice } = useContext(CartContext)
+    const navigate = useNavigate() // Initialize useNavigate
+    const isAuth = JSON.parse(localStorage.getItem('user')) || false
+    const [form] = Form.useForm()
+    function handleSubmit() {
+        form.validateFields()
+            .then(values => {
+                const orderData = {
+                    ...values,
+                    // products: getTotal(), // Add more order-related data if needed
+                    products: cart.map(item =>  ({ name: item.name,  })),
+                    totalSum: getTotalSum().toLocaleString(),
+                    totalPrice: getTotalPrice().toLocaleString(),
+                    // product_number: item.qty
+                
+                }
+    
+                Api.post(urls.orders.get, orderData)
+                    .then(res => {
+                        if (res.data.id) {
+                            message.success("Buyurtma muvaffaqiyatli rasmiylashtirildi")
+                            localStorage.removeItem('cart')
+                            navigate('/');
+                            window.location.reload()
+                        }
+                    })
+                    .catch(err => console.log(err, 'Error in order submission'))
+            })
+            .catch(errorInfo => {
+                console.log('Form validation failed:', errorInfo)
+            })
+    }
+    
   return (
     <>
     <div className="container">
@@ -45,23 +78,47 @@ function Checkout() {
                 <button className='change'>O'zgartirish</button>
                 <div className="checkout-info">
                     <h2>Buyurtmani qabul qiluvchi:</h2>
-                    <form className="form">
-                        <label>
-                            <span>Familiya*</span>
-                            <input type="text" required />
-                        </label>
-                        <label>
-                            <span>Ism*</span>
-                            <input type="text" required />
-                        </label>
-                    </form>
-                    <p>Siz koʻrsatgan telefon raqamiga buyurtma holati haqida bildirishnoma yuboramiz. <br />
-                    Yetkazib berish vaqtini aniqlashtirish uchun kuryer siz bilan telefon orqali bogʻlanadi.</p>
-                    <p><input type="checkbox" name="" id="" /> <span>
-                    Yangiliklarimiz va aksiyalarimizga obuna boʻling. <br /> Yangi chegirmalar, aksiyalar va sotib tugatishlar haqida birinchilar qatorida bilib olasiz.</span></p>
+                    <Form className='form' form={form} layout="vertical">
+                            <Form.Item
+                                name="familiya"
+                                label="Familiya"
+                                initialValue={isAuth.familiya || ''}
+                                rules={[{ required: true, message: 'Familiya kiriting' }]}
+                            >
+                                <Input className='input'/>
+                            </Form.Item>
+                            <Form.Item
+                                name="ism"
+                                label="Ism"
+                                initialValue={isAuth.ism || ''}
+                                rules={[{ required: true, message: 'Ism kiriting' }]}
+                            >
+                                <Input className='input' />
+                            </Form.Item>
+                            <Form.Item name="subscribe" valuePropName="checked">
+                                <Checkbox>
+                                    Yangiliklarimiz va aksiyalarimizga obuna boʻling. <br />
+                                    Yangi chegirmalar, aksiyalar va sotib tugatishlar haqida birinchilar qatorida bilib olasiz.
+                                </Checkbox>
+                            </Form.Item>
+                        </Form>
+
+
                 </div>
                 <div className="order">
-
+                    <div className="product-all">
+                    {
+                        cart.map((item, key) =>(
+                                <div className="product" key={key}>
+                                    <img src={item.images[0]} height={100} width={100} alt="" />
+                                    <div className="product-content">
+                                        <h1>{item.name}</h1>
+                                        <p>{item.discount_price.toLocaleString()} so'm</p>
+                                    </div>
+                                </div>
+                        ))
+                    }
+                    </div>
                 </div>
             </div>
             <div className="checkout-ordered" >
@@ -82,11 +139,11 @@ function Checkout() {
                                             <span>Tejavingiz: {(getTotalPrice() - getTotalSum()).toLocaleString()} so'm</span>
                                         </p>
                                     </span>
-                                    <Link to="/checkout">
-                                    <button className='checkout'>
-                                        To'lovga o'ting
+                                    
+                                    <button onClick={()=> handleSubmit()} className='checkout'>
+                                        Buyurtma qilish
                                     </button>
-                                    </Link>
+                                    
                                 </div> 
         </div>
     </div>

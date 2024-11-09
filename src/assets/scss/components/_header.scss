@@ -1,67 +1,117 @@
 .header {
-    padding: 20px 0;
+    font-size: 14px;
     display: flex;
     flex-direction: column;
+    background-color: #08090a08;
+    padding: 0 0 10px 0;
     &-top{
-        padding: 0 0 15px 0;
         display: flex;
+        padding: 5px 0;
+        color: white;
         align-items: center;
         justify-content: space-between;
-    }
-    .left{
-        display: flex;
-        column-gap: 20px;
-        align-items: center;
-        .under{
-            text-decoration: underline;
-        }
-    }
-    .right{
-        display: flex;
-        align-items: center;
-        column-gap: 20px;
-        span{
+        background-color: #333;
+        .headertop{
             display: flex;
             align-items: center;
-            column-gap: 5px;
-        }
-        .buy{
-            color: blueviolet;
-            font-size: 18px;
+            justify-content: space-between;
+
+            .left{
+                display: flex;
+                column-gap: 20px;
+                align-items: center;
+                p{
+                    display: flex;
+                    align-items: center;
+                }
+                .yuridik{
+                    width: 180px;
+                    padding:  5px;
+                    font-size: 14px;
+                    border-radius: 8px;
+                    background-color: rgba($color: gray, $alpha: 0.7);
+                    // height: 30px;
+                    border: 1px solid gray;
+                }
+            }
+            .right{
+                display: flex;
+                align-items: center;
+                column-gap: 20px;
+                span{
+                    display: flex;
+                    align-items: center;
+                    column-gap: 5px;
+                }
+                .buy{
+                    // color: blueviolet;
+                    font-size: 18px;
+                }
+                .language{
+                    width: 80px;
+                    height: 30px;
+                    border: 1px solid gray;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    border-radius: 20px;
+                    display: flex;
+                    align-items: center;
+                    font-size: 16px;
+                  }
+                  
+                  .language select {
+                    border: none;
+                    border-radius: 4px;
+                    background-color: #333;
+                    font-size: 14px;
+                    
+                  }
+                  
+                  .language select:focus {
+                    outline: none;
+                    border-color: #007bff;
+                    background-color: #333;
+                  }
+                  
+            }
         }
     }
+
     &-bottom{
-        button{
+        z-index: 10000;
+        padding: 20px 0;
+        
+        .katalog{
             width: 120px;
-            background-color: rgb(149, 68, 225);
-            color: white;
+            background-color: #fbc100;
+            color: black;
             height: 45px;
-            border-radius: 4px;
+            border-radius: 12px;
             font-size: 18px;
             display: flex;
             align-items: center;
             justify-content: center;
             column-gap: 5px;
+            font-weight: 500;
             img{
                 width: 24px;
                 height: 24px;
             }
-            &:hover{
-                background-color: rgb(192, 147, 233);
-                transition: all 0.2s ease-in-out;
-            }
+
         }
         display: flex;
         align-items: center;
         justify-content: space-between;
         .input{
+            background-color: #fff;
             display: flex;
             align-items: center;
             width: 620px;
-            border: 0.5px solid rgb(176, 175, 175);
+            border: 2px solid #fbc100 ;
             height: 45px;
-            justify-content: space-between;
-            border-radius: 4px;
+            justify-content: start;
+            border-radius: 12px;
             input{
                 border: none;
                 width: 70%;
@@ -69,10 +119,9 @@
                 outline: none;
                 padding: 0 0 0 10px;
             }
-            button{
+            .input-btn{
                 height: 100%;
-                width: 70px;
-                background-color: rgb(222, 222, 222);
+                width: 40px;
                 display: flex;
                 align-items: center;
                 justify-content: center;
@@ -90,12 +139,13 @@
             column-gap: 10px;
             span{
                 display: flex;
-                align-items: center;
                 column-gap: 5px;
                 width: auto;
-                height: 45px;
+                height: auto;
                 padding: 15px;
                 justify-content: center;
+                align-items: center;
+                flex-direction: column;
                 border: none;
                 border-radius: 4px;
                 &:hover{
@@ -112,14 +162,14 @@
                 border: none;
                 border-radius: 50%;
                 background-color: goldenrod;
-                color: white;
+                color: black;
                 display: flex;
                 flex-direction: column;
                 align-items: center;
                 justify-content: center;
                 position: absolute;
-                top: 0;
-                right: 0;
+                top: 10px;
+                right: 25px;
                 font-size: 12px;
                 &-active{
                     background-color: white;
@@ -128,10 +178,12 @@
 
         }
     }
+
     &-categories{
+        font-size: 14px;
         width: 100%;
         height: auto;
-        padding: 20px 0 0 0;
+        padding: 10px 0 0 0;
         display: flex;
         align-items: center;
         justify-content: space-between;

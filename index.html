@@ -3,11 +3,34 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" type="image/svg+xml" href="/public/icons/favicon.svg">
-    <title>Uzum</title>
+    <link rel="icon" type="image/svg+xml" href="https://texnomart.uz/_nuxt/img/logo-gold.43d88b3.svg">
+    <title>Texnomart</title>
   </head>
   <body>
     <div class="wrapper"></div>
+    <button id="scrollToTopBtn" style="display:none;"><img src="/images/up-arrow-alt-regular-24.png" width="30px" height="30px" alt=""></button>
+
     <script type="module" src="/src/main.jsx"></script>
+    <script>
+      // Scrollni kuzatish
+      window.onscroll = function () {
+        // Tugmani ko'rsatish / yashirish
+        let button = document.getElementById('scrollToTopBtn');
+        if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+          button.style.display = "block"; // Tugmani ko'rsatish
+        } else {
+          button.style.display = "none"; // Tugmani yashirish
+        }
+      };
+  
+      // Saytning yuqori qismiga scroll qilish
+      document.getElementById('scrollToTopBtn').onclick = function () {
+        window.scrollTo({
+          top: 0,
+          behavior: 'smooth' // Smooth scroll effect
+        });
+      };
+    </script>
+  
   </body>
 </html>

@@ -9,6 +9,7 @@ import { Autoplay, Pagination, Navigation } from 'swiper/modules';
   return (
     <>
     <div className="container">
+    <div className="banner-all">
 
       <Swiper
         spaceBetween={30}
@@ -28,13 +29,15 @@ import { Autoplay, Pagination, Navigation } from 'swiper/modules';
           list.map((item)=>(
           <SwiperSlide key={item.id}>
           <div className="banner">
-          <img src={item.image} alt={item.title} />
+          <img className='banner-item' src={item.image} alt={item.title} />
           </div>
           </SwiperSlide>
           ))
         }
         
       </Swiper>
+    </div>
+
     </div>
 
     </>
