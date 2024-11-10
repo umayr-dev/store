@@ -31,5 +31,11 @@ export const  urls ={
         post: '/orders',
         patch: (id)=> `/orders/${id}`,
         delete: (id)=> `/orders/${id}`
+    },
+    users: {
+        get: '/users',
+        post: '/users',
+        patch: (id)=> `/users/${id}`,
+        delete: (id)=> `/users/${id}`
     }
 }

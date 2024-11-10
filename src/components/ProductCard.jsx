@@ -7,7 +7,7 @@ import { SavedContext } from "../context/SavedContext";
 import { message } from "antd";
 
 function ProductCard({ product }) {
-  const { id, name, images, price, price_per_month, reviews, discount_price } =
+  const { id, name, images, price_per_month,  discount_price } =
     product;
   const { addCart } = useContext(CartContext);
   const { addSaved, isSaved } = useContext(SavedContext);

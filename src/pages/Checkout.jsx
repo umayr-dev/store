@@ -6,24 +6,22 @@ import Api from '../api'
 import { urls } from '../constants/urls'
 import { message, Form, Input, Checkbox } from 'antd'
 
-
-
 function Checkout() {
-    const { cart,  getTotal, getTotalSum, getTotalPrice } = useContext(CartContext)
-    const navigate = useNavigate() // Initialize useNavigate
-    const isAuth = JSON.parse(localStorage.getItem('user')) || false
-    const [form] = Form.useForm()
+
+    const { cart,  getTotal, getTotalSum, getTotalPrice } = useContext(CartContext);
+    const navigate = useNavigate();
+    const isAuth = JSON.parse(localStorage.getItem('user')) || false;
+    const [form] = Form.useForm();
+
+
     function handleSubmit() {
         form.validateFields()
             .then(values => {
                 const orderData = {
                     ...values,
-                    // products: getTotal(), // Add more order-related data if needed
                     products: cart.map(item =>  ({ name: item.name,  })),
                     totalSum: getTotalSum().toLocaleString(),
-                    totalPrice: getTotalPrice().toLocaleString(),
-                    // product_number: item.qty
-                
+                    totalPrice: getTotalPrice().toLocaleString(),                
                 }
     
                 Api.post(urls.orders.get, orderData)
@@ -46,7 +44,6 @@ function Checkout() {
     <>
     <div className="container">
         <div className="checkout-page">
-            {/* <h1>Buyurtmani Rasmiylashtirish</h1> */}
             <div className="checkout-page__content">
                 <h2>Qabul qilish usuli va yetkazib berish manzili:</h2>
                 <p>Yetkazib berish shahri</p>
