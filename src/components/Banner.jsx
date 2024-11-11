@@ -12,8 +12,9 @@ import { Autoplay, Pagination, Navigation } from 'swiper/modules';
     <div className="banner-all">
 
       <Swiper
+      slidesPerView={1.2}
         spaceBetween={30}
-        centeredSlides={true}
+        centeredSlides={false}
         autoplay={{
           delay: 2500,
           disableOnInteraction: false,

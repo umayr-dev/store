@@ -6,7 +6,7 @@
         display: flex;
         justify-content: center;
         img{
-            width: 95%;
+            width: 100%;
             height: 100%;
             border-radius: 20px;
         }
@@ -42,3 +42,64 @@
     font-weight: bold; 
   }
   
+
+.app-banner{
+  display: flex;
+  width: 100%;
+  height: 520px;
+  justify-content: space-around;
+  background-color: #dddbdb;
+  margin: 50px 0;
+  padding: 20px;
+  align-items: center;
+  border-radius: 8px;
+  &__content{
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+    p{
+      display: flex;
+      align-items: center;
+      column-gap: 20px;
+    }
+    .qr{
+      width: 200px;
+    }
+    .app-prog{
+      display: flex;
+      column-gap: 20px;
+      padding: 10px 0;
+    }
+  }
+}
+.adventage{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: auto;
+  padding: 20px 0;
+  align-items: center;
+  row-gap: 20px;
+  h1{
+    font-size: 22px;
+  }
+  .issue{
+    display: flex;
+    width: 100%;
+    height: auto;
+    padding: 10px;
+    justify-content: space-between;
+    .card{
+      display: flex;
+      align-items: center;
+      p{
+        width: 300px;
+        display: flex;
+        flex-direction: column;
+        h2{
+          font-size: 18px;
+        }
+      }
+    }
+  }
+}

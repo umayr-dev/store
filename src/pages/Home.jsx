@@ -5,6 +5,7 @@ import Api from '../api';
 import { urls } from '../constants/urls';
 import BannerCategories from '../components/BannerCategories';
 import BrandCategories from '../components/BrandCategories';
+import AppBanner from '../components/AppBanner';
 
 function Home() {
   const [banners, setBanners]= useState([]);
@@ -45,6 +46,8 @@ function Home() {
       <BannerCategories/>
       <ProductList isHome={true}  list={products}/>
       <BrandCategories/>
+    <ProductList isHome={true} list={products}/>
+    <AppBanner/>
     <ProductList isHome={true} list={products}/>
     </>
   )

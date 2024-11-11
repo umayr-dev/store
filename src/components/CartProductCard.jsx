@@ -26,7 +26,7 @@ function CartProductCard() {
                             <p>Uzum Market omborida </p>
                             <h1>15-oktabr orasida yetkazamiz</h1>
                             <div className="bottom-content">
-                                <img src={item.images[0]} height={120} width={120} alt="" />
+                                <img src={item.images} height={120} width={120} alt="" />
                                 <div className="context">
                                     <div className="context-top">
                                         <p>
