@@ -13,13 +13,8 @@ function CartProductCard() {
     <div className="container">
         <div className="cart">
             <h1>{ getTotal() > 0 ? `Savatingiz ${getTotal()}mahsulot` :<NullCart/>}</h1>
-            {
-                getTotal() > 0 ?             <div className="cart-content">
+            { getTotal() > 0 ?<div className="cart-content">
                 <div className="order-info">
-                    {/* <div className="top">
-                        <p>Yetkazib berishning eng yaqin sanasi</p>
-                        <span>15-oktabr</span>
-                    </div> */}
                     {
                         cart.map((item, key) =>(
                             <div className="bottom" key={key}>
@@ -70,12 +65,9 @@ function CartProductCard() {
                                     </button>
                                     </Link>
                                 </div> 
-            </div> :''
-            }
-
+            </div> :''}
         </div>
     </div>
-    
     </>
   )
 }

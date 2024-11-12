@@ -11,9 +11,6 @@ function ProductList(props) {
         <ProductCard key={item.id} product={item} />
     ))}
   </div>
-  {/* {props.isHome ? <div className="other">
-    <button>Yana ko'rsatish 10</button>
-  </div> : null} */}
     </div>
   )
   

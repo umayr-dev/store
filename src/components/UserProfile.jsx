@@ -1,10 +1,15 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import Api from "../api";
+import { urls } from "../constants/urls";
+import { message } from "antd";
 
 const UserProfile = () => {
-    // const navigate = useNavigate() // Initialize useNavigate
     const isAuth = JSON.parse(localStorage.getItem('user')) || false
-  // Foydalanuvchi ma'lumotlarini boshqarish uchun state
+  const [users, setUsers] = useState([]);
+  const [isEdit, setIsEdit] = useState(null);
+
+
   const [user, setUser] = useState({
     firstName: "Ism",
     lastName: "Familiya",
@@ -23,15 +28,21 @@ const UserProfile = () => {
     }));
   };
 
-  // Tahrirlash holatini o'zgartiruvchi funksiya
   const toggleEdit = () => {
     setIsEditing(!isEditing);
   };
 
   // Saqlash tugmasini bosganda ishlovchi funksiya
-  const handleSave = () => {
+  const handleSave = (values) => {
+    const obj = { ...values };
+
     setIsEditing(false);
-    // Bu yerda API ga saqlash uchun so'rov yuborishingiz mumkin
+    Api.patch(urls.users.patch(isEdit), obj).then((res) => {
+      if (res.data.id) {
+        message.success('Foydalanuvchi ma\'lumoti muvaffaqiyatli yangilandi!');
+        handleClose();
+      }
+    }).catch((err) => console.log(err, 'users edit'));
     console.log("Foydalanuvchi ma'lumotlari saqlandi:", user);
   };
 

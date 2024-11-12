@@ -1,17 +1,13 @@
 import React, { useEffect, useState } from 'react'
 import { Swiper, SwiperSlide } from 'swiper/react';
-
-// Import Swiper styles
 import 'swiper/css';
 import 'swiper/css/free-mode';
 import 'swiper/css/pagination';
 import Api from '../api';
 import { urls } from '../constants/urls';
-// import required modules
 import { FreeMode, Pagination } from 'swiper/modules';
 
 function BannerCategories() {
-
     const [categories, setCategories] = useState([])
 
     function getCategories(){
@@ -25,31 +21,26 @@ function BannerCategories() {
         getCategories()
     }, [])
   return (
-    <div className="container">
-
-    <div className='banner-categories'>
+<div className="container">
+  <div className='banner-categories'>
           <Swiper
         slidesPerView={4}
         spaceBetween={30}
         centeredSlides={true}
         freeMode={true}
         pagination={{
-            // type: 'fraction',
-        
             clickable: true,
         }}
-        // navigation={true}
         modules={[FreeMode, Pagination]}
-        className="mySwiper"
-        >
+        className="mySwiper">
         {
             categories.map(item =>(
                 <SwiperSlide className='slider-banner' key={item.id}>{item.name} <img src={item.image ? item.image : null} width={24} height={24}  /></SwiperSlide>
             ))
         }
       </Swiper>
-    </div>
-        </div>
+  </div>
+</div>
   )
 }
 

@@ -107,7 +107,7 @@ function Checkout() {
                     {
                         cart.map((item, key) =>(
                                 <div className="product" key={key}>
-                                    <img src={item.images[0]} height={100} width={100} alt="" />
+                                    <img src={item?.images[0]} height={100} width={100} alt="" />
                                     <div className="product-content">
                                         <h1>{item.name}</h1>
                                         <p>{item.discount_price?.toLocaleString()} so'm</p>

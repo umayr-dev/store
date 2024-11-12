@@ -11,13 +11,12 @@ function Header({ onAuthModalOpen , onChatModalOpen}) {
   const { language, changeLanguage } = useLanguage(); 
   const { getTotal } = useContext(CartContext);
   const [categories, setCategories] = useState([]);
-  const [products, setProducts] = useState([]); // Mahsulotlar ro'yxati
-  const [searchTerm, setSearchTerm] = useState(''); // Qidiruv so'rovi
-  const [filteredProducts, setFilteredProducts] = useState([]); // Qidiruv natijalari
+  const [products, setProducts] = useState([]);
+  const [searchTerm, setSearchTerm] = useState('');
+  const [filteredProducts, setFilteredProducts] = useState([]);
   const isAuth = JSON.parse(localStorage.getItem('user')) || false;
   const navigate = useNavigate();
 
-  // Kategoriyalarni olish
   function getCategories() {
     fetch('https://5709cdd829da4f5e.mokky.dev/categories')
       .then(response => response.json())
@@ -25,9 +24,8 @@ function Header({ onAuthModalOpen , onChatModalOpen}) {
       .catch(err => console.log(err, 'Error'));
   }
 
-  // Mahsulotlarni olish (agar API mavjud bo'lsa)
   function getProducts() {
-    fetch('https://5709cdd829da4f5e.mokky.dev/products') // To'g'ri API endpointini qo'ying
+    fetch('https://5709cdd829da4f5e.mokky.dev/products')
       .then(response => response.json())
       .then(data => setProducts(data))
       .catch(err => console.log(err, 'Error'));
@@ -35,7 +33,7 @@ function Header({ onAuthModalOpen , onChatModalOpen}) {
 
   useEffect(() => {
     getCategories();
-    getProducts(); // Mahsulotlarni olish
+    getProducts();
   }, []);
 
   const translations = {
@@ -82,7 +80,6 @@ function Header({ onAuthModalOpen , onChatModalOpen}) {
 
   const langContent = translations[language];
 
-  // Qidiruv funksiyasi
   const handleSearch = (event) => {
     const value = event.target.value;
     setSearchTerm(value);
@@ -96,8 +93,6 @@ function Header({ onAuthModalOpen , onChatModalOpen}) {
       setFilteredProducts([]);
     }
   };
-
-  // Qidiruv natijasidan tashqariga bosganda natijalarni yopish
   const handleClickOutside = (event) => {
     if (!event.target.closest('.search-container')) {
       setFilteredProducts([]);
@@ -114,7 +109,6 @@ function Header({ onAuthModalOpen , onChatModalOpen}) {
   return (
     <header>
       <div className="header">
-        {/* Header Top */}
         <div className="header-top">
           <div className="container">
             <div className="headertop">
@@ -141,7 +135,6 @@ function Header({ onAuthModalOpen , onChatModalOpen}) {
           </div>
         </div>
 
-        {/* Header Bottom */}
         <div className="container">
           <div className="header-bottom">
             <Link to='/'>
@@ -155,7 +148,6 @@ function Header({ onAuthModalOpen , onChatModalOpen}) {
               </button>
             </Link>
 
-            {/* Qidiruv Input */}
             <div className="search-container" style={{ position: 'relative' }}>
               <div className="input">
                 <button className="input-btn">
@@ -169,7 +161,6 @@ function Header({ onAuthModalOpen , onChatModalOpen}) {
                 />
               </div>
 
-              {/* Qidiruv Natijalari */}
               {filteredProducts.length > 0 && (
                 <ul className="search-results" >
                   {filteredProducts.map(product => (
@@ -217,7 +208,6 @@ function Header({ onAuthModalOpen , onChatModalOpen}) {
           </div>
         </div>
 
-        {/* Header Categories */}
         <div className="container">
           <div className="header-categories">
             {categories.map(item => (

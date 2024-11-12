@@ -8,6 +8,8 @@ import 'swiper/css/thumbs';
 import { CartContext } from '../context/CartContext';
 
 function Product({ product }) {
+  const { cart, deleteItem, getTotal, getTotalSum, getTotalPrice } = useContext(CartContext)
+
   const {slug} = useParams()
   const [ products, setProducts] = useState()
   const [active, setActive] = useState(false)
@@ -44,7 +46,7 @@ function Product({ product }) {
         <span><p>{products?.reviews} sharhlar</p></span>
     <div className="product">
       <div className="product-content">
-        <img src={products?.images[0]} width={450} alt="" />
+        <img src={products?.images[0]} width={350} alt="" />
       </div>
       <div className="products-details">
         <h2>Tezkor xotira (RAM)</h2>
@@ -61,7 +63,7 @@ function Product({ product }) {
         <p className='all-details'>Barcha xususiyatlar</p>
       </div>
       <div className="productpage-ordered">
-        <h2>{products?.discount_price} so'm</h2>
+        <h2>{products?.discount_price.toLocaleString()} so'm</h2>
         <div className="credit">
           <p>Muddatli to'lov</p>
           <h2 className='credit-price'>{products?.price_per_month.toLocaleString()} so'm</h2>

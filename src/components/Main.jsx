@@ -6,7 +6,6 @@ import Product from '../pages/Product'
 import CartProductCard from './CartProductCard'
 import SavedProduct from '../pages/SavedProduct'
 import Checkout from '../pages/Checkout'
-// import ProductSearch from './ProductSearch'
 import UserProfile from './UserProfile'
 
 function Main() {
@@ -20,7 +19,6 @@ function Main() {
                 <Route path='/categories' element={<Categories />} />
                 <Route path='/saved' element={<SavedProduct />} />
                 <Route path='/checkout' element={<Checkout />} />
-                {/* <Route path='/search' element={<ProductSearch />} /> */}
                 <Route path='/profile' element={<UserProfile />} />
             </Routes>
         </main>

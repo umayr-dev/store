@@ -35,7 +35,6 @@ function ProductCard({ product }) {
           <p>
             {" "}
             <span>
-              {/* <Star /> ( {reviews} sharhlar) */}
             </span>
           </p>
           <p className="price">{price_per_month.toLocaleString()} so'm/ 24 oy</p>

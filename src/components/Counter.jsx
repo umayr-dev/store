@@ -10,11 +10,9 @@ function Counter({item}) {
             decrement(item.id)
         }
     }
-
     const handleIncrement =()=>{
         increment(item.id)
     }
-
   return (
     <div className="buttons">
     <button onClick={handleDecrement}>-</button>

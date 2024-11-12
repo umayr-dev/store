@@ -1,19 +1,14 @@
 import React, { useEffect, useState } from 'react'
 import { Swiper, SwiperSlide } from 'swiper/react';
-
-// Import Swiper styles
 import 'swiper/css';
 import 'swiper/css/free-mode';
 import 'swiper/css/pagination';
 import Api from '../api';
 import { urls } from '../constants/urls';
-// import required modules
 import { FreeMode, Pagination } from 'swiper/modules';
 
 function BrandCategories() {
-
     const [brands, setBrands] = useState([])
-
     function getBrands(){
             Api.get(urls.brands.get)
               .then((res) => {
@@ -26,7 +21,6 @@ function BrandCategories() {
     }, [])
   return (
     <div className="container">
-
     <div className='brands-categories'>
         <h2>Ommabop brendlar</h2>
           <Swiper
@@ -35,14 +29,10 @@ function BrandCategories() {
         centeredSlides={true}
         freeMode={true}
         pagination={{
-            // type: 'fraction',
-        
             clickable: true,
         }}
-        // navigation={true}
         modules={[FreeMode, Pagination]}
-        className="mySwiper"
-        >
+        className="mySwiper">
         {
             brands.map(item =>(
                 <SwiperSlide className='slider-brands' key={item.id}> <img src={item.image ? item.image : null} width={200} height={120}  /></SwiperSlide>
@@ -50,8 +40,7 @@ function BrandCategories() {
         }
       </Swiper>
     </div>
-        </div>
+</div>
   )
 }
-
 export default BrandCategories
