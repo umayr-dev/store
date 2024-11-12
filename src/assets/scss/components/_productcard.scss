@@ -5,7 +5,12 @@
     flex-direction: column;
     position: relative;
     padding: 5px;
-    
+    &:hover{
+        -webkit-box-shadow: 5px 5px 6px -1px rgba(209,201,209,0.87);
+        -moz-box-shadow: 5px 5px 6px -1px rgba(209,201,209,0.87);
+        box-shadow: 4px 5px 8px -1px rgba(209,201,209,0.87);
+    transition: all 0.4s ease-out;
+    }
     &-image{
         z-index: 10;
         width: auto;
@@ -56,13 +61,13 @@
     &:hover img{
         scale: 105%;    
     }
-    &:hover &-content{
-        -webkit-box-shadow: 5px 5px 6px -1px rgba(209,201,209,0.87);
-        -moz-box-shadow: 5px 5px 6px -1px rgba(209,201,209,0.87);
-        box-shadow: 4px 5px 8px -1px rgba(209,201,209,0.87);
+    // &:hover &-content{
+    //     -webkit-box-shadow: 5px 5px 6px -1px rgba(209,201,209,0.87);
+    //     -moz-box-shadow: 5px 5px 6px -1px rgba(209,201,209,0.87);
+    //     box-shadow: 4px 5px 8px -1px rgba(209,201,209,0.87);
         
-    transition: all 0.3s ease-out;
-    }
+    // transition: all 0.3s ease-out;
+    // }
     &-buttons{
         transition: all 0.3s ease;
         width: fit-content;
