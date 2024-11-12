@@ -4,15 +4,17 @@
     display: flex;
     flex-direction: column;
     position: relative;
+    padding: 5px;
+    
     &-image{
         z-index: 10;
-        width: 100%;
+        width: auto;
         overflow: hidden;
         height: 300px;
         border-radius: 8px;
         img{
             width: 100%;
-            height: 100%;
+            height: auto;
             border: none;
             transition: scale 300ms;
         }

@@ -21,19 +21,19 @@ function AppBanner() {
         <div className="adventage">
             <h1>Smartfonlar va maishiy texnika muddatli to'lovga</h1>
             <div className="issue">
-                <div className="card">
+                <div className="kard">
                     <img width={48} height={48} src="https://texnomart.uz/_nuxt/img/diagram.8268449.svg" alt="" />
                     <p><h2>Muddatli to'lovga sotib olish</h2>
                     <span>Qulay bo'lib to'lash</span>
                     </p>
                 </div>
-                <div className="card">
+                <div className="kard">
                     <img width={48} height={48} src="https://texnomart.uz/_nuxt/img/truck.771714e.svg" alt="" />
                     <p><h2>Bepul yetkazib berish</h2>
                     <span>Texnomartga tovarlarni yetkazib berish shartlari</span>
                     </p>
                 </div>
-                <div className="card">
+                <div className="kard">
                     <img width={48} height={48} src="https://texnomart.uz/_nuxt/img/warranty.1819e8f.svg" alt="" />
                     <p><h2>Mahsulotlar uchun kafolat</h2>
                     <span>Mahsulotlar uchun kafolatTexnomartda mahsulotning kafolati va qaytarilishi haqida hamma narsani bilib oling</span>
