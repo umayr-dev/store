@@ -56,8 +56,8 @@ function Product({ product }) {
         </div>
         <h2>Ichki Xotira</h2>
         <div className="btns">
-          <button className={btnactive ? 'ram active' : 'ram'} onClick={()=>handleClick2()}>256Gb</button>
-          <button className={active ? 'ram active' : 'ram'} onClick={()=>handleClick()}>128Gb</button>
+          <button className={btnactive ? 'ram active' : 'ram'} onClick={()=>handleClick2()}>128Gb</button>
+          <button className={active ? 'ram active' : 'ram'} onClick={()=>handleClick()}>256Gb</button>
         </div>
         <h2>Mahsulot haqida qisqacha</h2>
         <p className='all-details'>Barcha xususiyatlar</p>

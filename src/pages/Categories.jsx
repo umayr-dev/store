@@ -5,7 +5,6 @@ import Api from '../api';
 import { urls } from '../constants/urls';
 import { useLocation, useSearchParams } from 'react-router-dom';
 
-
 function Categories() {
   const [categories, setCategories] = useState([])
   const [products, setProducts] = useState([]);
@@ -89,7 +88,6 @@ function Categories() {
               brands.map(item => (
                 <label key={item.id}
                 ><input
-                // defaultChecked={JSON.parse(searchParams.get('brand_id'))?.map(Number)?.include(Number(item.id))} 
                 name={item.id} onChange={handleChange} type='checkbox'/>{item.name}</label>
               ))
             }
